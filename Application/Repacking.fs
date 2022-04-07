@@ -12,3 +12,7 @@ type IBinTreeDataAccess =
 // outer bin does not exist.
 let viewBinTree (dataAccess : IBinTreeDataAccess) (bin : BinIdentifier) : Option<BinTree> =
     dataAccess.RetrieveBinTree bin
+
+let productCount (dataAccess : IBinTreeDataAccess) (bin : BinIdentifier) : Option<int> =
+    let binTree = dataAccess.RetrieveBinTree bin
+    binTree |> Option.map BinTree.productCount
