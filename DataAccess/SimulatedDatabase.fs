@@ -1,20 +1,17 @@
 ﻿module StorageMachine.SimulatedDatabase
 
-open System.Collections.Generic
 open FsToolkit.ErrorHandling
 open StorageMachine.Stock
 open Common
 open Bin
-open ResultCE
 
 type ParentBin = BinIdentifier
-type NestedBin = BinIdentifier
+type NestedBins = NestedBins of BinIdentifier * List<BinIdentifier>
 
 type private StockData = {
     Bins : Set<BinIdentifier>
     Content : Map<BinIdentifier, PartNumber>
-    BinStructure : Map<NestedBin, ParentBin>
-    // TODO YURSAV: Is this a convenient representation?
+    BinStructure : Map<ParentBin, NestedBins>
 }
 
 let private unsafeResult r =
@@ -25,12 +22,12 @@ let private unsafeResult r =
 let mutable private stockData : StockData =
     let bins =
         [
-            BinIdentifier.make "B001"
-            BinIdentifier.make "B002"
-            BinIdentifier.make "B003"
-            BinIdentifier.make "B004"
-            BinIdentifier.make "B005"
-            BinIdentifier.make "B006"
+            BinIdentifier.make "B001" // 0
+            BinIdentifier.make "B002" // 1
+            BinIdentifier.make "B003" // 2
+            BinIdentifier.make "B004" // 3
+            BinIdentifier.make "B005" // 4
+            BinIdentifier.make "B006" // 5
         ]
         |> List.sequenceResultM
         |> unsafeResult
@@ -38,6 +35,7 @@ let mutable private stockData : StockData =
         [
             PartNumber.make "1000-1000-1000"
             PartNumber.make "2000-1000-1000"
+            PartNumber.make "3000-1000-1000"
         ]
         |> List.sequenceResultM
         |> unsafeResult
@@ -47,8 +45,14 @@ let mutable private stockData : StockData =
             Map.ofList [
                 bins.[1], products.[0]
                 bins.[3], products.[1]
+                bins.[4], products.[2]
             ]
-        BinStructure = Map.empty
+        BinStructure =
+            Map.ofList [
+                bins.[0], NestedBins (bins.[1], [bins.[2]])
+                bins.[1], NestedBins (bins.[3], [])
+                bins.[2], NestedBins (bins.[4], [bins.[5]])
+            ]
     }
 
 // Public API
@@ -75,3 +79,6 @@ let storeBin (bin : Bin) =
                     | None -> stockData.Content
             }
         Ok ()
+
+let binNesting () : Map<ParentBin, NestedBins> =
+    stockData.BinStructure
