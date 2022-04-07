@@ -10,5 +10,5 @@ type IBinTreeDataAccess =
 
 // A trivial use-case for retrieving a tree of bins based on the identifier of the outer bin. Result is 'None' if the
 // outer bin does not exist.
-let viewTree (dataAccess : IBinTreeDataAccess) (bin : BinIdentifier) : Option<BinTree> =
+let viewBinTree (dataAccess : IBinTreeDataAccess) (bin : BinIdentifier) : Option<BinTree> =
     dataAccess.RetrieveBinTree bin

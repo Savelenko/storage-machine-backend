@@ -10,6 +10,7 @@
     <Compile Include="PostExample.fs" />
     <Compile Include="Stock\Serialization.fs" />
     <Compile Include="Stock\Stock.fs" />
+    <Compile Include="Repacking\Repacking.fs" />
     <Compile Include="HttpHandlers.fs" />
   </ItemGroup>
 
