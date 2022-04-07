@@ -1,4 +1,5 @@
-﻿module StorageMachine.PostExample
+﻿/// Not related to actual functionality of this back-end. Provides an example of some of the Giraffe functions.
+module StorageMachine.PostExample
 
 open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
@@ -6,6 +7,10 @@ open Giraffe
 open Thoth.Json.Giraffe
 open Thoth.Json.Net
 
+/// An example of how to:
+/// - read JSON from the body of a HTTP request and apply a Thoth decoder to it
+/// - return two different "negative" responses, based on the deserialized value
+/// - return a "positive" response
 let processPost (next: HttpFunc) (ctx: HttpContext) =
     task {
         // Decode an integer number from JSON
