@@ -80,5 +80,5 @@ let storeBin (bin : Bin) =
             }
         Ok ()
 
-let binNesting () : Map<ParentBin, NestedBins> =
+let retrieveBinNesting () : Map<ParentBin, NestedBins> =
     stockData.BinStructure

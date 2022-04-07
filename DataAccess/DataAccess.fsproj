@@ -9,6 +9,7 @@
   <ItemGroup>
     <Compile Include="SimulatedDatabase.fs" />
     <Compile Include="Stock.fs" />
+    <Compile Include="Repacking.fs" />
   </ItemGroup>
 
   <ItemGroup>
