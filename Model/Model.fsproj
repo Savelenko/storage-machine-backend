@@ -10,10 +10,7 @@
     <Compile Include="Validation.fs" />
     <Compile Include="Common.fs" />
     <Compile Include="Stock\Bin.fs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Repacking\" />
+    <Compile Include="Repacking\BinTree.fs" />
   </ItemGroup>
 
   <ItemGroup>

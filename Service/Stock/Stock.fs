@@ -23,8 +23,6 @@ let stockOverview (next: HttpFunc) (ctx: HttpContext) =
         return! ThothSerializer.RespondJsonSeq bins Serialization.encoderBin next ctx 
     }
 
-//ThothSerializer.ReadBody
-
 let stockHandlers : HttpHandler =
     choose [
         GET >=> route "/bins" >=> binOverview
