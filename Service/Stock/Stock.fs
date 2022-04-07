@@ -8,14 +8,14 @@ open Stock
 
 let binOverview (next: HttpFunc) (ctx: HttpContext) =
     task {
-        let dataAccess = ctx.GetService<IStockPersistence> ()
+        let dataAccess = ctx.GetService<IStockDataAccess> ()
         let bins = Stock.binOverview dataAccess
         return! ThothSerializer.RespondJsonSeq bins Serialization.encoderBin next ctx 
     }
 
 let stockOverview (next: HttpFunc) (ctx: HttpContext) =
     task {
-        let dataAccess = ctx.GetService<IStockPersistence> ()
+        let dataAccess = ctx.GetService<IStockDataAccess> ()
         let bins = Stock.stockOverview dataAccess
         return! ThothSerializer.RespondJsonSeq bins Serialization.encoderBin next ctx 
     }

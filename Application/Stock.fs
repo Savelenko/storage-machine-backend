@@ -4,15 +4,15 @@ open StorageMachine
 open Common
 open Bin
 
-type IStockPersistence =
+type IStockDataAccess =
 
     abstract RetrieveAllBins : unit -> List<Bin>
 
-let binOverview (dataAccess : IStockPersistence) : List<Bin> =
+let binOverview (dataAccess : IStockDataAccess) : List<Bin> =
     // Trivially
     dataAccess.RetrieveAllBins ()
 
-let stockOverview (dataAccess : IStockPersistence) : List<Bin> =
+let stockOverview (dataAccess : IStockDataAccess) : List<Bin> =
     // Perform I/O
     let allBins = dataAccess.RetrieveAllBins ()
     // Use the model which provides the definition of a bin being (non-)empty

@@ -32,7 +32,7 @@ let private configureServices (services: IServiceCollection) =
         .AddAuthorization()
         .AddAuthentication(fun options -> options.DefaultScheme <- CookieAuthenticationDefaults.AuthenticationScheme)
         .Services
-        .AddSingleton<Stock.IStockPersistence>(Stock.stockPersistence)
+        .AddSingleton<Stock.IStockDataAccess>(Stock.stockPersistence)
         .AddSingleton<Repacking.IBinTreeDataAccess>(Repacking.binTreeDataAccess)
         .AddGiraffe()
         .AddSingleton<Json.ISerializer>(ThothSerializer (skipNullField = false, caseStrategy = CaseStrategy.CamelCase))

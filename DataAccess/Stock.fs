@@ -4,7 +4,7 @@ open StorageMachine
 open Bin
 open Stock
 
-let stockPersistence = { new IStockPersistence with
+let stockPersistence = { new IStockDataAccess with
     
     member this.RetrieveAllBins () =
         SimulatedDatabase.retrieveBins ()
