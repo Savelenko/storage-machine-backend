@@ -13,15 +13,17 @@ let binOverview (next: HttpFunc) (ctx: HttpContext) =
     task {
         let stockPersistence = ctx.GetService<IStockPersistence> ()
         let bins = Stock.binOverview stockPersistence
-        return! ThothSerializer.RespondJsonSeq bins Serialization.binEncoder next ctx 
+        return! ThothSerializer.RespondJsonSeq bins Serialization.encoderBin next ctx 
     }
 
 let stockOverview (next: HttpFunc) (ctx: HttpContext) =
     task {
         let stockPersistence = ctx.GetService<IStockPersistence> ()
         let bins = Stock.stockOverview stockPersistence
-        return! ThothSerializer.RespondJsonSeq bins Serialization.binEncoder next ctx 
+        return! ThothSerializer.RespondJsonSeq bins Serialization.encoderBin next ctx 
     }
+
+//ThothSerializer.ReadBody
 
 let stockHandlers : HttpHandler =
     choose [
