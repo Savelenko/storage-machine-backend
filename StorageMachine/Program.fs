@@ -11,6 +11,7 @@ open Microsoft.Extensions.Configuration
 open Microsoft.AspNetCore.Hosting
 open StorageMachine
 open StorageMachine.Stock
+open StorageMachine.Repacking
 
 let private configureApp (app: IApplicationBuilder) =
     let errorHandler (ex: Exception) (log: ILogger) =
@@ -32,6 +33,7 @@ let private configureServices (services: IServiceCollection) =
         .AddAuthentication(fun options -> options.DefaultScheme <- CookieAuthenticationDefaults.AuthenticationScheme)
         .Services
         .AddSingleton<Stock.IStockPersistence>(Stock.stockPersistence)
+        .AddSingleton<Repacking.IBinTreeDataAccess>(Repacking.binTreeDataAccess)
         .AddGiraffe()
         .AddSingleton<Json.ISerializer>(ThothSerializer (skipNullField = false, caseStrategy = CaseStrategy.CamelCase))
         |> ignore

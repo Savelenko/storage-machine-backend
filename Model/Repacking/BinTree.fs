@@ -4,10 +4,10 @@ open StorageMachine
 open Common
 
 type BinTree =
-    | Bin of List<BinTree>
+    | Bin of BinIdentifier * List<BinTree>
     | Product of PartNumber
 
 let rec productCount binTree =
     match binTree with
-    | Bin productsOrBins -> List.sumBy productCount productsOrBins
+    | Bin (_, productsOrBins) -> List.sumBy productCount productsOrBins
     | Product _ -> 1
