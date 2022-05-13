@@ -12,6 +12,18 @@ The goal is to see an example of a complete system made using F# and get acquain
 * Storage Machine uses [Giraffe](https://github.com/giraffe-fsharp/Giraffe/blob/master/DOCUMENTATION.md) -- a library for creating Web-applications using F# as a thin layer on top of ASP.NET Core in FP style, unlike heavily OO-based ASP.NET Core model.
 * For JSON serialization the [Thoth.Json](https://thoth-org.github.io/Thoth.Json/documentation/concept/introduction.html) library is used because it provides FP-oriented combinator style of JSON (de)serialization.
 
+## Exercise 0 (warming up)
+
+> Fill in missing parts to complete the functionality of retrieving an overview of products in stock.
+
+Requirements and hints:
+
+- The `Stock` component already contains two other complete and working functionalities. Study the corresponding use-case functions `binOverview` and `stockOverview` in the Application layer.
+- Study how other layers support these two working use-cases.
+- Discover how to trigger these use-cases from outside and use Postman to see the results.
+- Fill in all "holes" marked with "Exercise 0" required to complete implementation of `productsInStock` in the Application layer.
+- Compare the response in Postman with simulated (hard-coded) data in the Data Access layer.
+
 ## Exercise A
 
 > Extend the `Stock` component with functionality to store a new bin containing zero or one products.
