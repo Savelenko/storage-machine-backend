@@ -2,7 +2,6 @@
 module StorageMachine.Stock.Stock
 
 open StorageMachine
-open Common
 open Bin
 open Stock
 
@@ -32,6 +31,6 @@ type ProductsOverview = Set<Product * Quantity>
 /// An overview of all products stored in the Storage Machine, regardless what bins contain them.
 let productsInStock ``what parameters are needed here?`` : ProductsOverview =
     // Use the model
-    let products = allProducts (failwith "Exercise 0: Fill this in.")
+    let products = Stock.allProducts (failwith "Exercise 0: Fill this in.")
     products
     |> failwith "Exercise 0: Complete this implementation."
