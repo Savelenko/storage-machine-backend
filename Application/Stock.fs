@@ -23,3 +23,14 @@ let stockOverview (dataAccess : IStockDataAccess) : List<Bin> =
     // Use the model which provides the definition of a bin being (non-)empty
     let actualStock = allBins |> List.filter Bin.isNotEmpty
     actualStock
+
+/// All products in the Storage Machine are counted by piece.
+type Quantity = int
+
+/// An overview of all products in stock consists of all unique products and their total quantity stored in the Storage
+/// Machine.
+type ProductsOverview = Set<PartNumber * Quantity>
+
+/// An overview of all products stored in the Storage Machine, regardless what bins contain them.
+let productsInStock ``what parameters are needed here?`` : ProductsOverview =
+    failwith "Exercise 0: comlpete this implementation"
