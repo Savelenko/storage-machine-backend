@@ -54,3 +54,7 @@ Requirements and hints:
 - Adjust the model to express the packaging requirement.
 - Implement repacking as a bin tree transformation function.
 - Add the repacking step to an existing use-case function in the Application layer of the `Repacking` component.
+
+## Exercise C
+
+TODO: Something more advanced?
