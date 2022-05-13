@@ -6,6 +6,7 @@ open FsToolkit.ErrorHandling
 open StorageMachine
 open Common
 open Bin
+open Stock
 
 /// JSON serialization of a bin.
 let encoderBin : Encoder<Bin> = fun bin ->
@@ -32,3 +33,7 @@ let decoderPartNumber : Decoder<PartNumber> =
         | Ok partNumber -> Decode.succeed partNumber
         | Error validationMessage -> Decode.fail validationMessage
     )
+
+/// JSON serialization of a stock product.
+let encoderProduct : Encoder<Product> = fun product ->
+    failwith "Exercise 0: choose your own serialized representation of a Product and implement it here."
