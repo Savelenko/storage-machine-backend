@@ -4,6 +4,7 @@ module StorageMachine.Stock.Stock
 open StorageMachine
 open Common
 open Bin
+open Stock
 
 /// Defines data access operations for stock functionality.
 type IStockDataAccess =
@@ -24,13 +25,13 @@ let stockOverview (dataAccess : IStockDataAccess) : List<Bin> =
     let actualStock = allBins |> List.filter Bin.isNotEmpty
     actualStock
 
-/// All products in the Storage Machine are counted by piece.
-type Quantity = int
-
 /// An overview of all products in stock consists of all unique products and their total quantity stored in the Storage
 /// Machine.
-type ProductsOverview = Set<PartNumber * Quantity>
+type ProductsOverview = Set<Product * Quantity>
 
 /// An overview of all products stored in the Storage Machine, regardless what bins contain them.
 let productsInStock ``what parameters are needed here?`` : ProductsOverview =
-    failwith "Exercise 0: comlpete this implementation"
+    // Use the model
+    let products = allProducts (failwith "Exercise 0: Fill this in.")
+    products
+    |> failwith "Exercise 0: Complete this implementation."
