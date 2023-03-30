@@ -1,7 +1,6 @@
 ﻿/// Not related to actual functionality of this back-end. Provides an example of some of the Giraffe functions.
 module StorageMachine.PostExample
 
-open FSharp.Control.Tasks
 open Microsoft.AspNetCore.Http
 open Giraffe
 open Thoth.Json.Giraffe

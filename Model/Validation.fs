@@ -13,4 +13,4 @@ let alphaNumeric invalid s = if String.forall Char.IsLetterOrDigit s then Ok s e
 
 /// Validate that the given string matches the provided regular expression or indicate otherwise by returning the
 /// provided value.
-let matches (re : Regex) invalid s = if re.IsMatch s then Ok s else Error invalid
+let matches (re : Regex) invalid (s: string) = if re.IsMatch s then Ok s else Error invalid
