@@ -9,7 +9,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/StorageMachine/bin/Debug/net5.0/StorageMachine.dll",
+            "program": "${workspaceFolder}/StorageMachine/bin/Debug/net7.0/StorageMachine.dll",
             "args": [],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",

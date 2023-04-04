@@ -1,7 +1,6 @@
 ﻿/// This module exposes use-cases of the Stock component as an HTTP Web service using Giraffe.
 module StorageMachine.Stock.Stock
 
-open FSharp.Control.Tasks
 open Giraffe
 open Microsoft.AspNetCore.Http
 open Thoth.Json.Net
