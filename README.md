@@ -57,4 +57,7 @@ Requirements and hints:
 
 ## Exercise C
 
-TODO: Something more advanced?
+> Improve the model of product repacking.
+
+- Current model in module `BinTree` allows a bin tree to be a single product. Strictly speaking, this does not make sense. Define the type for bin trees such that this is not possible anymore.
+- Adjust the model further to make applying packaging to products more than once impossible.
