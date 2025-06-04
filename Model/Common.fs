@@ -3,7 +3,7 @@ module StorageMachine.Common
 
 open System.Text.RegularExpressions
 
-/// Every bin stored in the Storage Machine is identifier by a unique identifier.
+/// Every bin stored in the Storage Machine is identified by a unique identifier.
 type BinIdentifier = private | BinIdentifier of string
 
 /// Provides access to raw bin identifier by pattern matching.
