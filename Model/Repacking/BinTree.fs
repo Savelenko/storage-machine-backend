@@ -5,7 +5,7 @@ module StorageMachine.Repacking.BinTree
 open StorageMachine
 open Common
 
-/// Multiple bins can be nested in each other, this forming a "tree" of bins.
+/// Multiple bins can be nested in each other, thus forming a "tree" of bins.
 type BinTree =
     /// A bin can contain zero or more other (nested) bins and products.
     | Bin of BinIdentifier * List<BinTree>
