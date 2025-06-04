@@ -69,7 +69,7 @@ let retrieveBins () : Set<BinIdentifier> =
     stockData.Bins
 
 /// Retrieves stock for all bins currently stored in the Storage Machine. If the map does not contain a key, then the
-/// correspond bin does not contain a product (or is not stored in the Machine at all).
+/// corresponding bin does not contain a product (or is not stored in the Machine at all).
 let retrieveStock () : Map<BinIdentifier, PartNumber> =
     stockData.Content
 
