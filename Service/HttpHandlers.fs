@@ -5,7 +5,7 @@ open Giraffe
 open StorageMachine.Stock
 open StorageMachine.Repacking
 
-/// Composes all dispatching of HTTP requests into a single Giraffe HTTP handler. This handler is the used to "run"
+/// Composes all dispatching of HTTP requests into a single Giraffe HTTP handler. This handler is then used to "run"
 /// Giraffe in the main function of the back-end.
 let requestHandlers : HttpHandler =
     choose [

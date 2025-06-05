@@ -18,6 +18,7 @@
     <PackageReference Include="Giraffe" Version="6.4.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Ply" Version="0.3.1" />
+    <PackageReference Include="System.Text.Json" Version="8.0.5" />
     <PackageReference Include="Thoth.Json.Giraffe" Version="6.0.0" />
     <PackageReference Update="FSharp.Core" Version="8.0.300" />
   </ItemGroup>
