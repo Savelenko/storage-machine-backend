@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <WarnOn>3390;$(WarnOn)</WarnOn>
+    <!-- Enabling running the program on .net later than 8.0 -->
+    <RollForward>LatestMajor</RollForward>
   </PropertyGroup>
 
   <ItemGroup>
